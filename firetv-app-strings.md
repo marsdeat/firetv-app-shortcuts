@@ -52,11 +52,12 @@ In the table of application strings, those which REQUIRE `am start` are marked w
 ## Activity strings
 > So far, listed for those apps that require them only. Full information about these apps is in the previous table.
 
-|Application|`$APP_PACKAGE`|`$ACTIVITY`|
-|-|-|-|
 <!-- ROW TEMPLATES:
 |****|``|``|
 -->
+
+|Application|`$APP_PACKAGE`|`$ACTIVITY`|
+|-|-|-|
 |**5** _(UK)_|`com.mobileiq.demand5`|`com.channel5.my5.tv.ui.splash.view.SplashActivity`|
 |**Discovery+**|`com.discovery.discoplus`|`com.wbd.beam.BeamActivity`|
 |**HBO Max**|`com.hbo.hbonow`|`com.wbd.beam.BeamActivity`|
