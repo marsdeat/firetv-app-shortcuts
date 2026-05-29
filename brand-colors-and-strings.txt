@@ -61,11 +61,11 @@ Discovery+          com.discovery.discoplus     com.wbd.beam.BeamActivity
 HBO Max             com.hbo.hbonow              com.wbd.beam.BeamActivity
     am start -n com.hbo.hbonow/com.wbd.beam.BeamActivity
 
-ITVX                air.ITVMobilePlayer                 
+ITVX                air.ITVMobilePlayer         air.ITVMobilePlayer.ITVActivity       
     am start -n air.ITVMobilePlayer/air.ITVMobilePlayer.ITVActivity
 
-Nebula              tv.standard.nebula
+Nebula              tv.standard.nebula          .tv.features.splash.view.activities.SplashActivity
     am start -n tv.standard.nebula/.tv.features.splash.view.activities.SplashActivity
 
 Prime Video         com.amazon.firebat          com.amazon.firebatcore.deeplink.DeepLinkRoutingActivity 
-    am start -n  com.amazon.firebat/com.amazon.firebatcore.deeplink.DeepLinkRoutingActivity         
+    am start -n com.amazon.firebat/com.amazon.firebatcore.deeplink.DeepLinkRoutingActivity         
