@@ -5,7 +5,7 @@ In this documentation, there are only two variables one needs to worry about for
 - `$APP_PACKAGE` - the internal name of the application to be run
 - `$ACTIVITY` - a string specified by an individual app for a specific part of the app to jump to on opening.
 
-These are explained more fully in [**`README.md`**](README.md).
+These are explained more fully in [**`README.md`**](README.md)
 
 ## Using these strings
 Many apps can be opened directly from an `adb shell` using the `monkey` command, while others require launching a specific `$ACTIVITY` with `am start`:
@@ -16,11 +16,30 @@ monkey -p $APP_PACKAGE 1
 # Launched from activity
 am start -n $APP_PACKAGE/$ACTIVITY
 ```
-For more detailed information, see [**`README.md`**](README.md).
+For more detailed information, see [**`README.md`**](README.md)
 
-In the table of application strings, those which REQUIRE `am start` are marked with '_Activity_' in the 'Method' column. Those which can be launched with `monkey` are marked '**Direct**'.
+## `$APP_PACKAGE` strings
 
-## Application strings 
+### Usage
+Many apps can be opened directly from an `adb shell` using the `monkey` command, while others require launching a specific `$ACTIVITY` with `am start`:
+
+```sh
+# Directly launched package
+monkey -p $APP_PACKAGE 1
+# Launched from activity
+am start -n $APP_PACKAGE/$ACTIVITY
+```
+For more detailed information, see [**`README.md`**](README.md)
+
+In the table of application strings, those which can be launched with `monkey` are marked '**Direct**'.
+
+Those which REQUIRE `am start` are marked with '_Activity_' in the 'Method' column. If the string you need is marked with '_Activity_', consult the **`$ACTIVITY` strings** section below.
+
+### Formatting
+
+There are no line-breaks or whitespace characters within an `$APP_PACKAGE` string. Any text breaks you see are a result of rendering and not part of the strings themselves. They should be removed from your commands where applicable.
+
+### `$APP_PACKAGE` strings table
 
 <!-- ROW TEMPLATES:
 |****|``|**Direct**||
@@ -49,8 +68,21 @@ In the table of application strings, those which REQUIRE `am start` are marked w
 |**U**|`uk.co.uktv.dave`|**Direct**|formerly _UKTV Play_. Provides the free-to-air UKTV channels. Paid ones are on _NOW_|
 |**YouTube**|`com.amazon.firetv.youtube`|**Direct**|Appears to be an Amazon-provided built-in app rather than a Google-provided one|
 
-## Activity strings
-> So far, listed for those apps that require them only. Full information about these apps is in the previous table.
+## `$ACTIVITY` strings
+### Usage
+```sh
+am start -n $APP_PACKAGE/$ACTIVITY
+```
+For more detailed information, see [**`README.md`**](README.md)
+
+### Formatting
+So far, `$ACTIVITY` strings are listed only for those apps that require them. Full information about these apps is in the previous table.
+
+There are no line-breaks or whitespace characters within an `$APP_PACKAGE` or `$ACTIVITY` string. Any text breaks you see are a result of rendering and not part of the strings themselves. They should be removed from your commands where applicable.
+
+Some `$ACTIVITY` strings begin with a dot (`.`). This is an integral part of the string and should not be removed.
+
+### `$ACTIVITY` strings table
 
 <!-- ROW TEMPLATES:
 |****|``|``|
