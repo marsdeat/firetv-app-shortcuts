@@ -1,0 +1,71 @@
+(2026-05-27)
+                primary     accent      greys/background/neutrals
+Apple/macOS     #d2d2d2      #0271e3      #1d1d20  #ffffff  #000000
+Xbox            #0F7C11      #9BF00B      #FFFFFF  #E6E6E6  #616161  #000000
+Switch          #e60012      #bf0010      #FFFFFF  #424447  #000000
+
+Dropout         #fef139      #454545      #eeeeee  #000000
+Nebula          #2CADFE      #083852      #131619  #888f99 
+YouTube         #ff0033                     #FFFFFF  #282828
+NOW             #00676e      #00818a      #000000  #0a1b1b 
+Channel 4       #aaff89                     #292929  #ffffff
+ITVX            #e8f753      #558090      #102c3d  #dfe1e3  
+Disney+         #056877      #056d85      #051828 
+Prime Video     #0578ff                     #ffffff
+Netflix         #e50815                     #000000  #ffffff
+
+BBC iPlayer
+BBC Sounds
+Channel 5
+Paramount Plus
+2nd Try
+Apple TV
+U
+Discovery+
+HBO Max
+
+############################################################
+[[ Fire TV app strings ]]
+These ones can be launched directly as follows:
+                    monkey -p $APP_PACKAGE 1
+
+2nd Try             ott.thetryguys                      
+Apple TV            com.apple.atve.amazon.appletv       
+BBC iPlayer         uk.co.bbc.iplayer                   
+BBC Sounds          uk.co.bbc.sounds                    
+Channel 4           com.channel4.ondemand               
+Disney+             com.disney.disneyplus               
+Dropout             com.collegehumor.chdropout          
+National Theatre    com.ntathome                        
+Netflix             com.netflix.ninja                   
+NOW                 com.bskyb.nowtv.beta
+Paramount Plus      com.cbs.ca                          
+U                   uk.co.uktv.dave                     
+YouTube             com.amazon.firetv.youtube           
+
+############################################################
+
+These ones require specific Activity intents to launch.
+To find more in future: connect over adb, find apk, pull to personal device,
+    "apktool d [package].apk", then find <activity android:name="$ACTIVITY_STRING">s in AndroidManifest
+
+APP NAME            $APP_PACKAGE                $ACTIVITY_STRING
+    am start -n $APP_PACKAGE/$ACTIVITY_STRING
+
+Channel 5           com.mobileiq.demand5        com.channel5.my5.tv.ui.splash.view.SplashActivity
+    am start -n com.mobileiq.demand5/com.channel5.my5.tv.ui.splash.view.SplashActivity
+
+Discovery+          com.discovery.discoplus     com.wbd.beam.BeamActivity
+    am start -n com.discovery.discoplus/com.wbd.beam.BeamActivity
+
+HBO Max             com.hbo.hbonow              com.wbd.beam.BeamActivity
+    am start -n com.hbo.hbonow/com.wbd.beam.BeamActivity
+
+ITVX                air.ITVMobilePlayer                 
+    am start -n air.ITVMobilePlayer/air.ITVMobilePlayer.ITVActivity
+
+Nebula              tv.standard.nebula
+    am start -n tv.standard.nebula/.tv.features.splash.view.activities.SplashActivity
+
+Prime Video         com.amazon.firebat          com.amazon.firebatcore.deeplink.DeepLinkRoutingActivity 
+    am start -n  com.amazon.firebat/com.amazon.firebatcore.deeplink.DeepLinkRoutingActivity         
